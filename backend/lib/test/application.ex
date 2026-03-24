@@ -12,6 +12,8 @@ defmodule Test.Application do
       # {Test.Worker, arg}
     ]
 
+    IO.puts("heeey")
+
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Test.Supervisor]
