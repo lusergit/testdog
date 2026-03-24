@@ -1,0 +1,1688 @@
+
+12:42:26.497 [info] Application logger started at :nonode@nohost
+
+12:42:26.498 [info] Application xp_mime started at :nonode@nohost
+
+12:42:26.498 [info] Application xp_hpax started at :nonode@nohost
+
+12:42:26.498 [info] Application crypto started at :nonode@nohost
+
+12:42:26.498 [info] Application asn1 started at :nonode@nohost
+
+12:42:26.498 [info] Application public_key started at :nonode@nohost
+
+12:42:26.499 [debug] Child :ssl_handler of Supervisor :logger_sup started
+Pid: #PID<0.105.0>
+Start Call: :logger_olp.start_link(:logger_std_h_ssl_handler, :logger_h_common, %{id: :ssl_handler, module: :logger_std_h, config: %{type: :standard_io, filesync_repeat_interval: :no_repeat}, level: :debug, filter_default: :stop, filters: [], formatter: {:ssl_logger, %{}}}, %{})
+Restart: :temporary
+Shutdown: 2000
+Type: :worker
+
+12:42:26.500 [info] Child :ssl_pem_cache of Supervisor :ssl_admin_sup started
+Pid: #PID<0.109.0>
+Start Call: :ssl_pem_cache.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+
+12:42:26.501 [info] Child :ssl_manager of Supervisor :ssl_admin_sup started
+Pid: #PID<0.110.0>
+Start Call: :ssl_manager.start_link([])
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+
+12:42:26.501 [info] Child :tls_client_ticket_store of Supervisor :ssl_admin_sup started
+Pid: #PID<0.111.0>
+Start Call: :tls_client_ticket_store.start_link(1000, 7200)
+Restart: :permanent
+Shutdown: 4000
+Type: :worker
+
+12:42:26.501 [info] Child :ssl_admin_sup of Supervisor :ssl_sup started
+Pid: #PID<0.108.0>
+Start Call: :ssl_admin_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.502 [info] Child :tls_connection_sup of Supervisor :tls_sup started
+Pid: #PID<0.114.0>
+Start Call: :tls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.503 [info] Child :ssl_listen_tracker_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.116.0>
+Start Call: :ssl_listen_tracker_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.503 [info] Child :tls_server_session_ticket of Supervisor :tls_server_sup started
+Pid: #PID<0.117.0>
+Start Call: :tls_server_session_ticket_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.504 [info] Child :ssl_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.118.0>
+Start Call: :ssl_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.504 [info] Child :ssl_upgrade_server_session_cache_sup of Supervisor :tls_server_sup started
+Pid: #PID<0.119.0>
+Start Call: :ssl_upgrade_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.504 [info] Child :tls_server_sup of Supervisor :tls_sup started
+Pid: #PID<0.115.0>
+Start Call: :tls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.504 [info] Child :tls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.113.0>
+Start Call: :tls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.505 [info] Child :dtls_connection_sup of Supervisor :dtls_sup started
+Pid: #PID<0.121.0>
+Start Call: :dtls_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.505 [info] Child :dtls_listener_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.123.0>
+Start Call: :dtls_listener_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.505 [info] Child :dtls_server_session_cache_sup of Supervisor :dtls_server_sup started
+Pid: #PID<0.124.0>
+Start Call: :dtls_server_session_cache_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.505 [info] Child :dtls_server_sup of Supervisor :dtls_sup started
+Pid: #PID<0.122.0>
+Start Call: :dtls_server_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.505 [info] Child :dtls_sup of Supervisor :ssl_connection_sup started
+Pid: #PID<0.120.0>
+Start Call: :dtls_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.505 [info] Child :ssl_connection_sup of Supervisor :ssl_sup started
+Pid: #PID<0.112.0>
+Start Call: :ssl_connection_sup.start_link()
+Restart: :permanent
+Shutdown: 4000
+Type: :supervisor
+
+12:42:26.505 [info] Application ssl started at :nonode@nohost
+
+12:42:26.506 [info] Application xp_mint started at :nonode@nohost
+
+12:42:26.506 [info] Application xp_nimble_options started at :nonode@nohost
+
+12:42:26.507 [info] Child XPNimblePool.TaskSupervisor of Supervisor #PID<0.130.0> (Supervisor.Default) started
+Pid: #PID<0.131.0>
+Start Call: Task.Supervisor.start_link([name: XPNimblePool.TaskSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+12:42:26.507 [info] Application xp_nimble_pool started at :nonode@nohost
+
+12:42:26.508 [info] Child :telemetry_handler_table of Supervisor :telemetry_sup started
+Pid: #PID<0.135.0>
+Start Call: :telemetry_handler_table.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.508 [info] Application xp_telemetry started at :nonode@nohost
+
+12:42:26.508 [info] Application xp_finch started at :nonode@nohost
+
+12:42:26.514 [info] Child XPReq.Finch.PIDPartition0 of Supervisor XPReq.Finch started
+Pid: #PID<0.141.0>
+Start Call: Registry.Partition.start_link(XPReq.Finch.PIDPartition0, {:duplicate, XPReq.Finch, 0, 1, XPReq.Finch.KeyPartition0, XPReq.Finch.PIDPartition0, [], false})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.514 [info] Child XPReq.Finch of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.140.0>
+Start Call: Registry.start_link([keys: :duplicate, name: XPReq.Finch, meta: [config: %{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}}]])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+12:42:26.514 [info] Child XPReq.Finch.PoolSupervisor of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.142.0>
+Start Call: DynamicSupervisor.start_link([name: XPReq.Finch.PoolSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+12:42:26.514 [info] Child XPFinch.PoolManager of Supervisor XPReq.Finch.Supervisor started
+Pid: #PID<0.143.0>
+Start Call: XPFinch.PoolManager.start_link(%{pools: %{}, registry_name: XPReq.Finch, supervisor_name: XPReq.Finch.PoolSupervisor, manager_name: XPReq.Finch.PoolManager, default_pool_config: %{count: 1, size: 50, mod: XPFinch.HTTP1.Pool, conn_opts: [protocols: [:http1], transport_opts: [keepalive: true, nodelay: true, timeout: 5000], ssl_key_log_file_device: nil], pool_max_idle_time: :infinity, conn_max_idle_time: :infinity, start_pool_metrics?: false}})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.514 [info] Child XPReq.Finch of Supervisor #PID<0.138.0> (Supervisor.Default) started
+Pid: #PID<0.139.0>
+Start Call: XPFinch.start_link([name: XPReq.Finch, pools: %{default: [protocols: [:http1]]}])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.514 [info] Child XPReq.FinchSupervisor of Supervisor #PID<0.138.0> (Supervisor.Default) started
+Pid: #PID<0.144.0>
+Start Call: DynamicSupervisor.start_link([strategy: :one_for_one, name: XPReq.FinchSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+12:42:26.514 [info] Child XPReq.Test.Ownership of Supervisor #PID<0.138.0> (Supervisor.Default) started
+Pid: #PID<0.145.0>
+Start Call: XPReq.Test.Ownership.start_link([name: XPReq.Test.Ownership])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.514 [info] Application xp_req started at :nonode@nohost
+
+12:42:26.514 [info] Application burrito started at :nonode@nohost
+
+12:42:26.515 [info] Child XPBriefly.Entry of Supervisor XPBriefly.Supervisor started
+Pid: #PID<0.149.0>
+Start Call: XPBriefly.Entry.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.515 [info] Application xp_briefly started at :nonode@nohost
+
+12:42:26.515 [info] Application xp_schematic started at :nonode@nohost
+
+12:42:26.515 [info] Application xp_typed_struct started at :nonode@nohost
+
+12:42:26.515 [info] Application xp_gen_lsp started at :nonode@nohost
+
+12:42:26.515 [info] Application xp_sourceror started at :nonode@nohost
+
+12:42:26.515 [info] Application xp_spitfire started at :nonode@nohost
+
+12:42:26.515 [info] Application xp_forge started at :nonode@nohost
+
+12:42:26.517 [info] Child :ttb_autostart of Supervisor :runtime_tools_sup started
+Pid: #PID<0.153.0>
+Start Call: :ttb_autostart.start_link()
+Restart: :temporary
+Shutdown: 3000
+Type: :worker
+
+12:42:26.517 [info] Application runtime_tools started at :nonode@nohost
+
+12:42:26.517 [info] Application et started at :nonode@nohost
+
+12:42:26.518 [info] Application observer started at :nonode@nohost
+
+12:42:26.518 [info] Application xp_path_glob started at :nonode@nohost
+
+12:42:26.520 instance_id=19D1FA73AD6 [info] Expert v0.1.0-rc.6 starting on stdio
+
+12:42:26.522 instance_id=19D1FA73AD6 [info] Starting NodePortMapper on nonode@nohost
+
+12:42:26.523 instance_id=19D1FA73AD6 [info] Child XPForge.NodePortMapper of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.158.0>
+Start Call: XPForge.NodePortMapper.start_link([])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.524 instance_id=19D1FA73AD6 [info] Child XPForge.Document.Store of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.159.0>
+Start Call: XPForge.Document.Store.start_link([derive: [analysis: &XPForge.Ast.analyze/1]])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.524 instance_id=19D1FA73AD6 [info] Child XPExpert.ProjectSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.160.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.ProjectSupervisor, strategy: :one_for_one])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+12:42:26.524 instance_id=19D1FA73AD6 [info] Child XPExpert.DynamicSupervisor of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.161.0>
+Start Call: DynamicSupervisor.start_link([name: XPExpert.DynamicSupervisor])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+12:42:26.524 instance_id=19D1FA73AD6 [info] Child XPGenLSP.Assigns of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.162.0>
+Start Call: XPGenLSP.Assigns.start_link([name: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.524 instance_id=19D1FA73AD6 [info] Child :expert_task_queue of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.163.0>
+Start Call: Task.Supervisor.start_link([name: :expert_task_queue])
+Restart: :permanent
+Shutdown: :infinity
+Type: :supervisor
+
+12:42:26.525 instance_id=19D1FA73AD6 [info] Child XPGenLSP.Buffer of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.164.0>
+Start Call: XPGenLSP.Buffer.start_link([name: XPExpert.Buffer])
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.525 instance_id=19D1FA73AD6 [info] Child XPExpert.ActiveProjects of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.165.0>
+Start Call: XPExpert.ActiveProjects.start_link()
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.525 instance_id=19D1FA73AD6 [debug] [name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns]
+
+12:42:26.528 instance_id=19D1FA73AD6 [info] Child XPExpert of Supervisor XPExpert.Supervisor started
+Pid: #PID<0.166.0>
+Start Call: XPExpert.start_link([name: XPExpert, buffer: XPExpert.Buffer, task_supervisor: :expert_task_queue, dynamic_supervisor: XPExpert.DynamicSupervisor, assigns: XPExpert.Assigns])
+Restart: :permanent
+Shutdown: 500
+Type: :worker
+
+12:42:26.529 instance_id=19D1FA73AD6 [info] Application xp_expert started at :nonode@nohost
+
+12:42:26.571 instance_id=19D1FA73AD6 [debug] handled request client -> server initialize in 39ms
+
+12:42:26.574 instance_id=19D1FA73AD6 [info] Server initialized, registering capabilities
+
+12:42:26.574 instance_id=19D1FA73AD6 [debug] sent request server -> client client/registerCapability
+
+12:42:26.584 instance_id=19D1FA73AD6 [debug] handled notification client -> server initialized in 11ms
+
+12:42:26.588 instance_id=19D1FA73AD6 [info] Opened file:///home/luser/src/testdog/backend/mix.exs
+
+12:42:26.588 instance_id=19D1FA73AD6 [debug] handled notification client -> server textDocument/didOpen in 4ms
+
+12:42:26.590 instance_id=19D1FA73AD6 [info] Child {XPExpert.EngineSupervisor, "backend::7749750"} of Supervisor :"backend::7749750::supervisor" started
+Pid: #PID<0.173.0>
+Start Call: XPExpert.EngineSupervisor.start_link(%XPForge.Project{root_uri: "file:///home/luser/src/testdog/backend", mix_exs_uri: "file:///home/luser/src/testdog/backend/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 8054})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:26.590 instance_id=19D1FA73AD6 [debug] handled notification client -> server $/cancelRequest in 1ms
+
+12:42:26.591 instance_id=19D1FA73AD6 [debug] sent request server -> client window/workDoneProgress/create
+
+12:42:26.592 instance_id=19D1FA73AD6 [info] Received request textDocument/codeLens before engine for backend was initialized. Ignoring.
+
+12:42:26.593 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:26.593 instance_id=19D1FA73AD6 [debug] handled request client -> server textDocument/codeLens in 2ms
+
+12:42:26.597 instance_id=19D1FA73AD6 [info] Received request textDocument/codeAction before engine for backend was initialized. Ignoring.
+
+12:42:26.598 instance_id=19D1FA73AD6 [info] Child XPForge.EPMD of Supervisor :net_sup started
+Pid: #PID<0.177.0>
+Start Call: XPForge.EPMD.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+
+12:42:26.599 instance_id=19D1FA73AD6 [info] Child :auth of Supervisor :net_sup started
+Pid: #PID<0.178.0>
+Start Call: :auth.start_link()
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+
+12:42:26.604 instance_id=19D1FA73AD6 [info] Child :net_kernel of Supervisor :net_sup started
+Pid: #PID<0.179.0>
+Start Call: :net_kernel.start_link(%{name: :"expert-manager-testdog-8054@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 2000
+Type: :worker
+
+12:42:26.604 instance_id=19D1FA73AD6 [debug] Child :net_sup_dynamic of Supervisor :kernel_sup started
+Pid: #PID<0.176.0>
+Start Call: :erl_distribution.start_link(%{name: :"expert-manager-testdog-8054@127.0.0.1", supervisor: :net_sup_dynamic, net_tickintensity: 4, net_ticktime: 60, name_domain: :longnames, clean_halt: false})
+Restart: :permanent
+Shutdown: 1000
+Type: :supervisor
+
+12:42:26.605 instance_id=19D1FA73AD6 [debug] handled request client -> server textDocument/codeAction in 16ms
+
+12:42:26.605 instance_id=19D1FA73AD6 [debug] sent request server -> client window/workDoneProgress/create
+
+12:42:26.623 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:26.757 instance_id=19D1FA73AD6 [info] Using path: /home/luser/.local/share/.burrito/expert_erts-15.2.7_0.1.0-rc.6/erts-15.2.7/bin:/home/luser/.local/share/.burrito/expert_erts-15.2.7_0.1.0-rc.6/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/luser/.humanlog/bin:/home/luser/.local/bin:/home/luser/.nimble/bin:/home/luser/.cabal/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/luser/.asdf/shims:/home/luser/.cabal/bin:/home/luser/.cargo/bin:/home/luser/.atuin/bin:/usr/local/bin:/usr/bin:/home/luser/.ghcup/bin:/home/luser/go/bin:/home/luser/go/bin:/home/luser/.ghcup/bin:/home/luser/go/bin:/home/luser/go/bin
+
+12:42:26.758 instance_id=19D1FA73AD6 [info] Found elixir executable at /home/luser/.asdf/shims/elixir
+
+12:42:26.758 instance_id=19D1FA73AD6 [info] Found erl executable at /home/luser/.asdf/shims/erl
+
+12:42:26.758 instance_id=19D1FA73AD6 [info] Preparing engine
+
+12:42:26.927 instance_id=19D1FA73AD6 [info] Received request textDocument/hover before engine for backend was initialized. Ignoring.
+
+12:42:26.930 instance_id=19D1FA73AD6 [debug] handled request client -> server textDocument/hover in 8ms
+
+12:42:27.975 instance_id=19D1FA73AD6 [debug] Engine build output: * creating /home/luser/.cache/expert/0.1.0-rc.6/tooling/elixir-1.18.4-erts-16.0.2/mix_home/elixir/1-18-otp-28/rebar3
+
+12:42:28.082 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting elixir_sense (https://github.com/elixir-lsp/elixir_sense.git - e3ddc403554050221a2fd19a10a896fa7525bc02)
+
+12:42:28.384 instance_id=19D1FA73AD6 [info] Received request textDocument/codeAction before engine for backend was initialized. Ignoring.
+
+12:42:28.385 instance_id=19D1FA73AD6 [debug] handled request client -> server textDocument/codeAction in 2ms
+
+12:42:28.562 instance_id=19D1FA73AD6 [debug] Engine build output: remote: Enumerating objects: 17500, done.
+
+12:42:28.580 instance_id=19D1FA73AD6 [debug] Engine build output: remote: Counting objects:   0% (1/3072)        remote: Counting objects:   1% (31/3072)        remote: Counting objects:   2% (62/3072)        remote: Counting objects:   3% (93/3072)        remote: Counting objects:   4% (123/3072)        remote: Counting objects:   5% (154/3072)        remote: Counting objects:   6% (185/3072)        remote: Counting objects:   7% (216/3072)        remote: Counting objects:   8% (246/3072)        remote: Counting objects:   9% (277/3072)        remote: Counting objects:  10% (308/3072)        remote: Counting objects:  11% (338/3072)        remote: Counting objects:  12% (369/3072)        remote: Counting objects:  13% (400/3072)        remote: Counting objects:  14% (431/3072)        remote: Counting objects:  15% (461/3072)        remote: Counting objects:  16% (492/3072)        remote: Counting objects:  17% (523/3072)        remote: Counting objects:  18% (553/3072)        remote: Counting objects:  19% (584/3072)        remote: Counting objects:  20% (615/3072)        remote: Counting objects:  21% (646/3072)        remote: Counting objects:  22% (676/3072)        remote: Counting objects:  23% (707/3072)        remote: Counting objects:  24% (738/3072)        remote: Counting objects:  25% (768/3072)        remote: Counting objects:  26% (799/3072)        remote: Counting objects:  27% (830/3072)        remote: Counting objects:  28% (861/3072)        remote: Counting objects:  29% (891/3072)        remote: Counting objects:  30% (922/3072)        remote: Counting objects:  31% (953/3072)        remote: Counting objects:  32% (984/3072)        remote: Counting objects:  33% (1014/3072)        remote: Counting objects:  34% (1045/3072)        remote: Counting objects:  35% (1076/3072)        remote: Counting objects:  36% (1106/3072)        remote: Counting objects:  37% (1137/3072)        remote: Counting objects:  38% (1168/3072)        remote: Counting objects:  39% (1199/3072)        remote: Counting objects:  40% (1229/3072)        remote: Counting objects:  41% (1260/3072)        remote: Counting objects:  42% (1291/3072)        remote: Counting objects:  43% (1321/3072)        remote: Counting objects:  44% (1352/3072)        remote: Counting objects:  45% (1383/3072)        remote: Counting objects:  46% (1414/3072)        remote: Counting objects:  47% (1444/3072)        remote: Counting objects:  48% (1475/3072)        remote: Counting objects:  49% (1506/3072)        remote: Counting objects:  50% (1536/3072)        remote: Counting objects:  51% (1567/3072)        remote: Counting objects:  52% (1598/3072)        remote: Counting objects:  53% (1629/3072)        remote: Counting objects:  54% (1659/3072)        remote: Counting objects:  55% (1690/3072)        remote: Counting objects:  56% (1721/3072)        remote: Counting objects:  57% (1752/3072)        remote: Counting objects:  58% (1782/3072)        remote: Counting objects:  59% (1813/3072)        remote: Counting objects:  60% (1844/3072)        remote: Counting objects:  61% (1874/3072)        remote: Counting objects:  62% (1905/3072)        remote: Counting objects:  63% (1936/3072)        remote: Counting objects:  64% (1967/3072)        remote: Counting objects:  65% (1997/3072)        remote: Counting objects:  66% (2028/3072)        remote: Counting objects:  67% (2059/3072)        remote: Counting objects:  68% (2089/3072)        remote: Counting objects:  69% (2120/3072)        remote: Counting objects:  70% (2151/3072)        remote: Counting objects:  71% (2182/3072)        remote: Counting objects:  72% (2212/3072)        remote: Counting objects:  73% (2243/3072)        remote: Counting objects:  74% (2274/3072)        remote: Counting objects:  75% (2304/3072)        remote: Counting objects:  76% (2335/3072)        remote: Counting objects:  77% (2366/3072)        remote: Counting objects:  78% (2397/3072)        remote: Counting objects:  79% (2427/3072)        remote: Counting objects:  80% (2458/3072)        remote: Counting objects:  81% (2489/3072)        remote: Counting objects:  82% (2520/3072)        remote: Counting objects:  83% (2550/3072)        remote: Counting objects:  84% (2581/3072)        remote: Counting objects:  85% (2612/3072)        remote: Counting objects:  86% (2642/3072)        remote: Counting objects:  87% (2673/3072)        remote: Counting objects:  88% (2704/3072)        remote: Counting objects:  89% (2735/3072)        remote: Counting objects:  90% (2765/3072)        remote: Counting objects:  91% (2796/3072)        remote: Counting objects:  92% (2827/3072)        remote: Counting objects:  93% (2857/3072)        remote: Counting objects:  94% (2888/3072)        remote: Counting objects:  95% (2919/3072)        remote: Counting objects:  96% (2950/3072)        remote: Counting objects:  97% (2980/3072)        remote: Counting objects:  98% (3011/3072)        remote: Counting objects:  99% (3042/3072)        remote: Counting objects: 100% (3072/3072)        remote: Counting objects: 100% (3072/3072), done.
+
+12:42:28.682 instance_id=19D1FA73AD6 [debug] Engine build output: remote: Compressing objects:   0% (1/775)        remote: Compressing objects:   1% (8/775)        remote: Compressing objects:   2% (16/775)        remote: Compressing objects:   3% (24/775)        remote: Compressing objects:   4% (31/775)        remote: Compressing objects:   5% (39/775)        remote: Compressing objects:   6% (47/775)        remote: Compressing objects:   7% (55/775)        remote: Compressing objects:   8% (62/775)        remote: Compressing objects:   9% (70/775)        remote: Compressing objects:  10% (78/775)        remote: Compressing objects:  11% (86/775)        remote: Compressing objects:  12% (93/775)        remote: Compressing objects:  13% (101/775)        remote: Compressing objects:  14% (109/775)        remote: Compressing objects:  15% (117/775)        remote: Compressing objects:  16% (124/775)        remote: Compressing objects:  17% (132/775)        remote: Compressing objects:  18% (140/775)        remote: Compressing objects:  19% (148/775)        remote: Compressing objects:  20% (155/775)        remote: Compressing objects:  21% (163/775)        remote: Compressing objects:  22% (171/775)        remote: Compressing objects:  23% (179/775)        remote: Compressing objects:  24% (186/775)        remote: Compressing objects:  25% (194/775)        remote: Compressing objects:  26% (202/775)        remote: Compressing objects:  27% (210/775)        remote: Compressing objects:  28% (217/775)        remote: Compressing objects:  29% (225/775)        remote: Compressing objects:  30% (233/775)        remote: Compressing objects:  31% (241/775)        remote: Compressing objects:  32% (248/775)        remote: Compressing objects:  33% (256/775)        remote: Compressing objects:  34% (264/775)        remote: Compressing objects:  35% (272/775)        remote: Compressing objects:  36% (279/775)        remote: Compressing objects:  37% (287/775)        remote: Compressing objects:  38% (295/775)        remote: Compressing objects:  39% (303/775)        remote: Compressing objects:  40% (310/775)        remote: Compressing objects:  41% (318/775)        remote: Compressing objects:  42% (326/775)        remote: Compressing objects:  43% (334/775)        remote: Compressing objects:  44% (341/775)        remote: Compressing objects:  45% (349/775)        remote: Compressing objects:  46% (357/775)        remote: Compressing objects:  47% (365/775)        remote: Compressing objects:  48% (372/775)        remote: Compressing objects:  49% (380/775)        remote: Compressing objects:  50% (388/775)        remote: Compressing objects:  51% (396/775)        remote: Compressing objects:  52% (403/775)        remote: Compressing objects:  53% (411/775)        remote: Compressing objects:  54% (419/775)        remote: Compressing objects:  55% (427/775)        remote: Compressing objects:  56% (434/775)        remote: Compressing objects:  57% (442/775)        remote: Compressing objects:  58% (450/775)        remote: Compressing objects:  59% (458/775)        remote: Compressing objects:  60% (465/775)        remote: Compressing objects:  61% (473/775)        remote: Compressing objects:  62% (481/775)        remote: Compressing objects:  63% (489/775)        remote: Compressing objects:  64% (496/775)        remote: Compressing objects:  65% (504/775)        remote: Compressing objects:  66% (512/775)        remote: Compressing objects:  67% (520/775)        remote: Compressing objects:  68% (527/775)        remote: Compressing objects:  69% (535/775)        remote: Compressing objects:  70% (543/775)        remote: Compressing objects:  71% (551/775)        remote: Compressing objects:  72% (558/775)        remote: Compressing objects:  73% (566/775)        remote: Compressing objects:  74% (574/775)        remote: Compressing objects:  75% (582/775)        remote: Compressing objects:  76% (589/775)        remote: Compressing objects:  77% (597/775)        remote: Compressing objects:  78% (605/775)        remote: Compressing objects:  79% (613/775)        remote: Compressing objects:  80% (620/775)        remote: Compressing objects:  81% (628/775)        remote: Compressing objects:  82% (636/775)        remote: Compressing objects:  83% (644/775)        remote: Compressing objects:  84% (651/775)        remote: Compressing objects:  85% (659/775)        remote: Compressing objects:  86% (667/775)        remote: Compressing objects:  87% (675/775)        remote: Compressing objects:  88% (682/775)        remote: Compressing objects:  89% (690/775)        remote: Compressing objects:  90% (698/775)        remote: Compressing objects:  91% (706/775)        remote: Compressing objects:  92% (713/775)        remote: Compressing objects:  93% (721/775)        remote: Compressing objects:  94% (729/775)        remote: Compressing objects:  95% (737/775)        remote: Compressing objects:  96% (744/775)        remote: Compressing objects:  97% (752/775)        remote: Compressing objects:  98% (760/775)        remote: Compressing objects:  99% (768/775)        remote: Compressing objects: 100% (775/775)        remote: Compressing objects: 100% (775/775), done.
+
+12:42:28.815 instance_id=19D1FA73AD6 [debug] Engine build output: remote: Total 17500 (delta 2433), reused 2561 (delta 2289), pack-reused 14428 (from 4)
+
+12:42:29.028 instance_id=19D1FA73AD6 [debug] Engine build output: Resolving Hex dependencies...
+
+12:42:29.049 instance_id=19D1FA73AD6 [debug] Engine build output: Resolution completed in 0.019s
+
+12:42:29.050 instance_id=19D1FA73AD6 [debug] Engine build output: Unchanged:
+
+12:42:29.050 instance_id=19D1FA73AD6 [debug] Engine build output: briefly 0.5.1
+
+12:42:29.050 instance_id=19D1FA73AD6 [debug] Engine build output: bunt 1.0.0
+
+12:42:29.050 instance_id=19D1FA73AD6 [debug] Engine build output: credo 1.7.15
+
+12:42:29.050 instance_id=19D1FA73AD6 [debug] Engine build output: deps_nix 2.4.0
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: file_system 1.1.1
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: gen_lsp 0.11.3
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: hpax 1.0.3
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: jason 1.4.4
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: mint 1.7.1
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: nimble_options 1.1.1
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: nimble_parsec 1.2.3
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: patch 0.15.0
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: path_glob 0.2.0
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: quokka 2.12.1
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: refactorex 0.1.52
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: schematic 0.2.1
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: sourceror 1.10.1
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: spitfire 0.3.10
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: telemetry 1.3.0
+
+12:42:29.051 instance_id=19D1FA73AD6 [debug] Engine build output: typed_struct 0.3.0
+
+12:42:29.053 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting deps_nix (Hex package)
+
+12:42:29.078 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting credo (Hex package)
+
+12:42:29.126 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting gen_lsp (Hex package)
+
+12:42:29.174 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting patch (Hex package)
+
+12:42:29.178 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting quokka (Hex package)
+
+12:42:29.181 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting path_glob (Hex package)
+
+12:42:29.182 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting sourceror (Hex package)
+
+12:42:29.184 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting refactorex (Hex package)
+
+12:42:29.188 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting nimble_parsec (Hex package)
+
+12:42:29.190 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting jason (Hex package)
+
+12:42:29.191 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting nimble_options (Hex package)
+
+12:42:29.192 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting schematic (Hex package)
+
+12:42:29.193 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting typed_struct (Hex package)
+
+12:42:29.194 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting telemetry (Hex package)
+
+12:42:29.195 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting briefly (Hex package)
+
+12:42:29.196 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting spitfire (Hex package)
+
+12:42:29.198 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting bunt (Hex package)
+
+12:42:29.199 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting file_system (Hex package)
+
+12:42:29.201 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting mint (Hex package)
+
+12:42:29.204 instance_id=19D1FA73AD6 [debug] Engine build output: * Getting hpax (Hex package)
+
+12:42:29.206 instance_id=19D1FA73AD6 [debug] Engine build output: You have added/upgraded packages you could sponsor, run `mix hex.sponsor` to learn more
+
+12:42:29.277 instance_id=19D1FA73AD6 [debug] Engine build output: ==> typed_struct
+
+12:42:29.277 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 2 files (.ex)
+
+12:42:29.311 instance_id=19D1FA73AD6 [debug] Engine build output: Generated typed_struct app
+
+12:42:29.329 instance_id=19D1FA73AD6 [debug] Engine build output: ==> file_system
+
+12:42:29.329 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 7 files (.ex)
+
+12:42:29.397 instance_id=19D1FA73AD6 [debug] Engine build output: Generated file_system app
+
+12:42:29.415 instance_id=19D1FA73AD6 [debug] Engine build output: ==> nimble_options
+
+12:42:29.415 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 3 files (.ex)
+
+12:42:29.564 instance_id=19D1FA73AD6 [debug] Engine build output: Generated nimble_options app
+
+12:42:29.571 instance_id=19D1FA73AD6 [debug] Engine build output: ==> bunt
+
+12:42:29.571 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 2 files (.ex)
+
+12:42:29.742 instance_id=19D1FA73AD6 [debug] Engine build output: Generated bunt app
+
+12:42:29.753 instance_id=19D1FA73AD6 [debug] Engine build output: ==> jason
+
+12:42:29.753 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 10 files (.ex)
+
+12:42:30.332 instance_id=19D1FA73AD6 [debug] Engine build output: Generated jason app
+
+12:42:30.339 instance_id=19D1FA73AD6 [debug] Engine build output: ==> hpax
+
+12:42:30.339 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 4 files (.ex)
+
+12:42:30.519 instance_id=19D1FA73AD6 [debug] Engine build output: Generated hpax app
+
+12:42:30.531 instance_id=19D1FA73AD6 [debug] Engine build output: ==> mint
+
+12:42:30.531 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 1 file (.erl)
+
+12:42:30.567 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 20 files (.ex)
+
+12:42:30.953 instance_id=19D1FA73AD6 [debug] Engine build output: Generated mint app
+
+12:42:30.955 instance_id=19D1FA73AD6 [debug] Engine build output: ==> elixir_sense
+
+12:42:30.955 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 1 file (.yrl)
+
+12:42:32.005 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 5 files (.erl)
+
+12:42:33.906 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 88 files (.ex)
+
+12:42:34.587 instance_id=19D1FA73AD6 [debug] Engine build output: warning: :elixir_def.local_for/4 is undefined or private. Did you mean:
+
+12:42:34.587 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:34.587 instance_id=19D1FA73AD6 [debug] Engine build output: * local_for/5
+
+12:42:34.587 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:34.587 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:34.587 instance_id=19D1FA73AD6 [debug] Engine build output: 9 │           :elixir_def.local_for(e.module, name, arity, kinds)
+
+12:42:34.587 instance_id=19D1FA73AD6 [debug] Engine build output: │                       ~
+
+12:42:34.587 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/elixir_sense/core/normalized/macro/env.ex:9:23: ElixirSense.Core.Normalized.Macro.Env.expand_import/5
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: warning: :elixir_rewrite.match_rewrite/5 is undefined or private. Did you mean:
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: * match/6
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: 16 │       :elixir_rewrite.match_rewrite(receiver, dot_meta, right, meta, e_args)
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: │                       ~
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/elixir_sense/core/compiler/rewrite.ex:16:23: ElixirSense.Core.Compiler.Rewrite.do_rewrite/7
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: warning: :elixir_rewrite.guard_rewrite/6 is undefined or private. Did you mean:
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: * guard/6
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: 30 │         :elixir_rewrite.guard_rewrite(receiver, dot_meta, right, meta, e_args, "guard")
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: │                         ~
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/elixir_sense/core/compiler/rewrite.ex:30:25: ElixirSense.Core.Compiler.Rewrite.do_rewrite/7
+
+12:42:34.588 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:34.590 instance_id=19D1FA73AD6 [debug] Engine build output: Generated elixir_sense app
+
+12:42:34.611 instance_id=19D1FA73AD6 [debug] Engine build output: ==> patch
+
+12:42:34.611 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 43 files (.ex)
+
+12:42:34.853 instance_id=19D1FA73AD6 [debug] Engine build output: Generated patch app
+
+12:42:34.884 instance_id=19D1FA73AD6 [debug] Engine build output: ==> sourceror
+
+12:42:34.884 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 12 files (.ex)
+
+12:42:35.082 instance_id=19D1FA73AD6 [debug] Engine build output: Generated sourceror app
+
+12:42:35.097 instance_id=19D1FA73AD6 [debug] Engine build output: ==> refactorex
+
+12:42:35.097 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 47 files (.ex)
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.271 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/variable/extract_variable.ex:2: Refactorex.Refactor.Variable.ExtractVariable.visit/4
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/pipeline/remove_pipe.ex:2: Refactorex.Refactor.Pipeline.RemovePipe.visit/4
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.272 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/guard/rename_guard.ex:2: Refactorex.Refactor.Guard.RenameGuard.visit/4
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.273 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/pipeline/remove_io_inspect.ex:2: Refactorex.Refactor.Pipeline.RemoveIOInspect.visit/4
+
+12:42:35.274 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/constant/inline_constant.ex:2: Refactorex.Refactor.Constant.InlineConstant.visit/4
+
+12:42:35.275 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/variable/rename_variable.ex:2: Refactorex.Refactor.Variable.RenameVariable.visit/4
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.276 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/guard/extract_guard.ex:2: Refactorex.Refactor.Guard.ExtractGuard.visit/4
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.277 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/function/expand_anonymous_function.ex:2: Refactorex.Refactor.Function.ExpandAnonymousFunction.visit/4
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/if_else/use_regular_syntax.ex:2: Refactorex.Refactor.IfElse.UseRegularSyntax.visit/4
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.278 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/alias/inline_alias.ex:2: Refactorex.Refactor.Alias.InlineAlias.visit/4
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.279 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/function/collapse_anonymous_function.ex:2: Refactorex.Refactor.Function.CollapseAnonymousFunction.visit/4
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/variable/inline_variable.ex:2: Refactorex.Refactor.Variable.InlineVariable.visit/4
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.280 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/alias/sort_nested_aliases.ex:2: Refactorex.Refactor.Alias.SortNestedAliases.visit/4
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.281 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/guard/inline_guard.ex:2: Refactorex.Refactor.Guard.InlineGuard.visit/4
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.282 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/alias/extract_alias.ex:2: Refactorex.Refactor.Alias.ExtractAlias.visit/4
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: :skip
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(boolean())
+
+12:42:35.283 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/function/use_regular_syntax.ex:2: Refactorex.Refactor.Function.UseRegularSyntax.visit/4
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: warning: the following clause will never match:
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: false
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: because it attempts to match on the result of:
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: can_refactor?(zipper, selection_or_line)
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: which has type:
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: dynamic(:skip or true)
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: typing violation found at:
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: 2 │   use Refactorex.Refactor,
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: │   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: │
+
+12:42:35.284 instance_id=19D1FA73AD6 [debug] Engine build output: └─ lib/refactorex/refactor/alias/merge_aliases.ex:2: Refactorex.Refactor.Alias.MergeAliases.visit/4
+
+12:42:35.285 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:35.285 instance_id=19D1FA73AD6 [debug] Engine build output: Generated refactorex app
+
+12:42:35.306 instance_id=19D1FA73AD6 [debug] Engine build output: ==> spitfire
+
+12:42:35.306 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 2 files (.erl)
+
+12:42:35.609 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 5 files (.ex)
+
+12:42:36.076 instance_id=19D1FA73AD6 [debug] Engine build output: Generated spitfire app
+
+12:42:36.087 instance_id=19D1FA73AD6 [debug] Engine build output: ==> nimble_parsec
+
+12:42:36.087 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 4 files (.ex)
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: warning: _.._ inside match is deprecated, you must always match on the step: _.._//var or _.._//_ if you want to ignore it
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec/compiler.ex:925: NimbleParsec.Compiler.newline_allowed?/1
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: warning: _.._ inside match is deprecated, you must always match on the step: _.._//var or _.._//_ if you want to ignore it
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec/compiler.ex:934: NimbleParsec.Compiler.newline_forbidden?/1
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: warning: min..max inside match is deprecated, you must always match on the step: min..max//var or min..max//_ if you want to ignore it
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec/compiler.ex:1041: NimbleParsec.Compiler.bin_range_to_guard/2
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: warning: min..max inside match is deprecated, you must always match on the step: min..max//var or min..max//_ if you want to ignore it
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec/compiler.ex:1044: NimbleParsec.Compiler.bin_range_to_guard/2
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: warning: min..min inside match is deprecated, you must always match on the step: min..min//var or min..min//_ if you want to ignore it
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec/compiler.ex:1047: NimbleParsec.Compiler.bin_range_to_guard/2
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: warning: min..max inside match is deprecated, you must always match on the step: min..max//var or min..max//_ if you want to ignore it
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec/compiler.ex:1053: NimbleParsec.Compiler.bin_range_to_guard/2
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: warning: min..max inside match is deprecated, you must always match on the step: min..max//var or min..max//_ if you want to ignore it
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec/compiler.ex:1056: NimbleParsec.Compiler.bin_range_to_guard/2
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: warning: min..min inside match is deprecated, you must always match on the step: min..min//var or min..min//_ if you want to ignore it
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec/compiler.ex:1059: NimbleParsec.Compiler.bin_range_to_guard/2
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: warning: min..max inside match is deprecated, you must always match on the step: min..max//var or min..max//_ if you want to ignore it
+
+12:42:36.106 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec/compiler.ex:1067: NimbleParsec.Compiler.inspect_bin_range/2
+
+12:42:36.107 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.117 instance_id=19D1FA73AD6 [debug] Engine build output: warning: min..max inside match is deprecated, you must always match on the step: min..max//var or min..max//_ if you want to ignore it
+
+12:42:36.117 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec.ex:423: NimbleParsec.exclude_bin_segment?/2
+
+12:42:36.118 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.118 instance_id=19D1FA73AD6 [debug] Engine build output: warning: _.._ inside match is deprecated, you must always match on the step: _.._//var or _.._//_ if you want to ignore it
+
+12:42:36.118 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec.ex:427: NimbleParsec.int_random/1
+
+12:42:36.118 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.127 instance_id=19D1FA73AD6 [debug] Engine build output: warning: _.._ inside match is deprecated, you must always match on the step: _.._//var or _.._//_ if you want to ignore it
+
+12:42:36.127 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec.ex:1796: NimbleParsec.split_range!/2
+
+12:42:36.127 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.127 instance_id=19D1FA73AD6 [debug] Engine build output: warning: _.._ inside match is deprecated, you must always match on the step: _.._//var or _.._//_ if you want to ignore it
+
+12:42:36.127 instance_id=19D1FA73AD6 [debug] Engine build output: lib/nimble_parsec.ex:1798: NimbleParsec.split_range!/2
+
+12:42:36.127 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:36.228 instance_id=19D1FA73AD6 [debug] Engine build output: Generated nimble_parsec app
+
+12:42:36.437 instance_id=19D1FA73AD6 [debug] Engine build output: ==> mix_install
+
+12:42:36.437 instance_id=19D1FA73AD6 [debug] Engine build output: ===> Analyzing applications...
+
+12:42:36.458 instance_id=19D1FA73AD6 [debug] Engine build output: ===> Compiling telemetry
+
+12:42:36.576 instance_id=19D1FA73AD6 [debug] Engine build output: ==> briefly
+
+12:42:36.576 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 5 files (.ex)
+
+12:42:36.634 instance_id=19D1FA73AD6 [debug] Engine build output: Generated briefly app
+
+12:42:36.642 instance_id=19D1FA73AD6 [debug] Engine build output: ==> schematic
+
+12:42:36.642 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 2 files (.ex)
+
+12:42:36.722 instance_id=19D1FA73AD6 [debug] Engine build output: Generated schematic app
+
+12:42:36.731 instance_id=19D1FA73AD6 [debug] Engine build output: ==> deps_nix
+
+12:42:36.731 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 9 files (.ex)
+
+12:42:36.820 instance_id=19D1FA73AD6 [debug] Engine build output: Generated deps_nix app
+
+12:42:36.843 instance_id=19D1FA73AD6 [debug] Engine build output: ==> credo
+
+12:42:36.843 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 253 files (.ex)
+
+12:42:38.063 instance_id=19D1FA73AD6 [debug] Engine build output: Generated credo app
+
+12:42:38.095 instance_id=19D1FA73AD6 [debug] Engine build output: ==> quokka
+
+12:42:38.096 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 15 files (.ex)
+
+12:42:38.600 instance_id=19D1FA73AD6 [debug] Engine build output: Generated quokka app
+
+12:42:38.619 instance_id=19D1FA73AD6 [debug] Engine build output: ==> gen_lsp
+
+12:42:38.619 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 472 files (.ex)
+
+12:42:41.468 instance_id=19D1FA73AD6 [debug] Engine build output: Generated gen_lsp app
+
+12:42:41.993 instance_id=19D1FA73AD6 [debug] Engine build output: ==> forge
+
+12:42:41.993 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 5 files (.erl)
+
+12:42:43.914 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 114 files (.ex)
+
+12:42:44.623 instance_id=19D1FA73AD6 [debug] Engine build output: Generated forge app
+
+12:42:44.648 instance_id=19D1FA73AD6 [debug] Engine build output: ==> path_glob
+
+12:42:44.648 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 2 files (.ex)
+
+12:42:46.779 instance_id=19D1FA73AD6 [debug] Engine build output: Generated path_glob app
+
+12:42:46.784 instance_id=19D1FA73AD6 [debug] Engine build output: ==> engine
+
+12:42:46.784 instance_id=19D1FA73AD6 [debug] Engine build output: Compiling 103 files (.ex)
+
+12:42:47.392 instance_id=19D1FA73AD6 [debug] Engine build output: Generated engine app
+
+12:42:47.694 instance_id=19D1FA73AD6 [debug] Engine build output: Namespacing 1775 files:
+
+12:42:47.694 instance_id=19D1FA73AD6 [debug] Engine build output: New: 1775
+
+12:42:47.694 instance_id=19D1FA73AD6 [debug] Engine build output: Changed: 0
+
+12:42:47.694 instance_id=19D1FA73AD6 [debug] Engine build output: Deleted: 0
+
+12:42:47.694 instance_id=19D1FA73AD6 [debug] Engine build output: 
+
+12:42:47.783 instance_id=19D1FA73AD6 [debug] Engine build output: Rewriting 22 app files
+
+12:42:47.800 instance_id=19D1FA73AD6 [debug] Engine build output: Rewriting .beam files
+
+12:42:47.822 instance_id=19D1FA73AD6 [debug] Engine build output: Found 0 protocols
+
+12:42:47.822 instance_id=19D1FA73AD6 [debug] Engine build output: Found 1683 app beam files
+
+12:42:50.760 instance_id=19D1FA73AD6 [debug] Engine build output: Finished namespacing .beam files
+
+12:42:50.760 instance_id=19D1FA73AD6 [debug] Engine build output: Rewriting 0 scripts
+
+12:42:50.778 instance_id=19D1FA73AD6 [debug] Engine build output: Rebuilding 0 boot files
+
+12:42:50.788 instance_id=19D1FA73AD6 [debug] Engine build output: Rewriting 0 config scripts.
+
+12:42:50.881 instance_id=19D1FA73AD6 [info] Engine available at: /home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns
+
+12:42:50.898 instance_id=19D1FA73AD6 [info] ebin paths:
+["/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/patch/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_briefly/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_bunt/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_credo/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_deps_nix/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_elixir_sense/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_engine/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_file_system/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_forge/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_gen_lsp/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_hpax/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_jason/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_mint/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_nimble_options/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_nimble_parsec/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_path_glob/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_quokka/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_refactorex/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_schematic/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_sourceror/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_spitfire/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_telemetry/ebin",
+ "/home/luser/.cache/expert/0.1.0-rc.6/elixir-1.18.4-erts-16.0.2/2922b04a9772d6010374700f244b3f56/_build/dev_ns/lib/xp_typed_struct/ebin"]
+
+12:42:50.912 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:50.914 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.179 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.180 instance_id=19D1FA73AD6 [debug] Node port message: ok
+
+
+12:42:51.286 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:51.281 [notice] Application mix exited: :stopped
+
+
+12:42:51.301 instance_id=19D1FA73AD6 [debug] Node port message:     warning: redefining module Test.MixProject (current version defined in memory)
+    │
+  1 │ defmodule Test.MixProject do
+    │ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    │
+    └─ /home/luser/src/testdog/backend/mix.exs:1: Test.MixProject (module)
+
+
+
+12:42:51.307 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.307 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.311 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.360 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:51.360 [info] Build path /home/luser/src/testdog/backend/.expert/build/erl-28/elixir-1.18 was compiled on a previous erlang version. Deleting
+
+
+12:42:51.366 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.366 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.366 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.366 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.367 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.367 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.367 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.367 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.367 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.367 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.367 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.367 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.368 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.368 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.368 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.368 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.368 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.368 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.368 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.368 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.369 instance_id=19D1FA73AD6 [debug] sent notification server -> client $/progress
+
+12:42:51.369 instance_id=19D1FA73AD6 [info] Child {XPExpert.Project.Node, "backend::7749750"} of Supervisor :"backend::7749750::supervisor" started
+Pid: #PID<0.174.0>
+Start Call: XPExpert.Project.Node.start_link(%XPForge.Project{root_uri: "file:///home/luser/src/testdog/backend", mix_exs_uri: "file:///home/luser/src/testdog/backend/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 8054})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:51.370 instance_id=19D1FA73AD6 [info] Child {XPExpert.Project.Diagnostics, "backend::7749750"} of Supervisor :"backend::7749750::supervisor" started
+Pid: #PID<0.213.0>
+Start Call: XPExpert.Project.Diagnostics.start_link(%XPForge.Project{root_uri: "file:///home/luser/src/testdog/backend", mix_exs_uri: "file:///home/luser/src/testdog/backend/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 8054})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:51.371 instance_id=19D1FA73AD6 [info] Child {XPExpert.Project.Intelligence, "backend::7749750"} of Supervisor :"backend::7749750::supervisor" started
+Pid: #PID<0.214.0>
+Start Call: XPExpert.Project.Intelligence.start_link(%XPForge.Project{root_uri: "file:///home/luser/src/testdog/backend", mix_exs_uri: "file:///home/luser/src/testdog/backend/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 8054})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:51.371 instance_id=19D1FA73AD6 [info] Child XPExpert.Project.SearchListener of Supervisor :"backend::7749750::supervisor" started
+Pid: #PID<0.215.0>
+Start Call: XPExpert.Project.SearchListener.start_link(%XPForge.Project{root_uri: "file:///home/luser/src/testdog/backend", mix_exs_uri: "file:///home/luser/src/testdog/backend/mix.exs", mix_project?: true, mix_env: nil, mix_target: nil, env_variables: %{}, project_module: nil, entropy: 8054})
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+
+12:42:51.371 instance_id=19D1FA73AD6 [info] Started project node for backend
+
+12:42:51.426 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:51.426 [info] Building backend
+
+
+12:42:51.427 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:51.426 [debug] sent request server -> client window/workDoneProgress/create
+
+
+12:42:51.469 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:51.468 [debug] sent notification server -> client $/progress
+
+
+12:42:51.506 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:51.505 [debug] sent notification server -> client $/progress
+
+
+12:42:52.946 instance_id=19D1FA73AD6 [debug] Node port message: * creating /home/luser/.cache/expert/0.1.0-rc.6/tooling/elixir-1.18.4-erts-16.0.2/mix_home/archives/hex-2.4.0-otp-27
+
+
+12:42:52.947 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.947 [debug] sent notification server -> client $/progress
+
+
+12:42:52.949 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.949 [debug] sent notification server -> client $/progress
+
+
+12:42:52.962 instance_id=19D1FA73AD6 [debug] Node port message: All dependencies are up to date
+
+
+12:42:52.962 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.962 [debug] sent notification server -> client $/progress
+
+
+12:42:52.964 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.964 [debug] sent notification server -> client $/progress
+
+
+12:42:52.965 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.965 [info] Loaded []
+
+
+12:42:52.966 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.965 [debug] sent notification server -> client $/progress
+
+
+12:42:52.982 instance_id=19D1FA73AD6 [debug] Node port message: Compiling 2 files (.ex)
+
+
+12:42:52.990 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.989 [debug] sent notification server -> client $/progress
+
+
+12:42:52.990 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.989 [debug] sent notification server -> client $/progress
+
+
+12:42:52.997 instance_id=19D1FA73AD6 [debug] Node port message: Generated test app
+
+
+12:42:52.998 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.998 [info] Compile completed with status ok Produced 0 diagnostics []
+
+
+12:42:53.000 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:52.999 [debug] sent notification server -> client $/progress
+
+
+12:42:53.000 instance_id=19D1FA73AD6 [info] Compiled backend in 1.6 seconds
+
+12:42:53.002 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:53.002 [info] Plugins found 0 results in 0.005 ms
+
+
+12:42:53.009 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:53.009 [info] backend reports empty
+
+
+12:42:53.012 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:53.012 [debug] sent request server -> client window/workDoneProgress/create
+
+
+12:42:53.013 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:53.012 [debug] sent notification server -> client $/progress
+
+
+12:42:53.014 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:53.014 [debug] sent notification server -> client $/progress
+
+
+12:42:53.073 instance_id=19D1FA73AD6 [debug] Node port message: 
+12:42:53.073 [debug] sent notification server -> client $/progress
+
