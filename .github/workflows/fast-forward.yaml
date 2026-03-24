@@ -36,8 +36,8 @@ jobs:
       - uses: actions/create-github-app-token@v1
         id: app-token
         with:
-          app-id: ${{ vars.EDGEHOG_APP_APP_ID }}
-          private-key: ${{ secrets.EDGEHOG_APP_PRIVATE_KEY }}
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
       - name: Fast forwarding
         uses: sequoia-pgp/fast-forward@v1
         with:
