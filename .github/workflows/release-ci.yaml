@@ -43,6 +43,7 @@ jobs:
           manifest-file: .github/release-please/manifest.json
   publish-docs:
     needs: [make-release]
+    runs-on: ubuntu-latest
     steps:
       - name: release output
         shell: bash
