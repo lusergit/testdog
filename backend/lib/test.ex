@@ -15,4 +15,8 @@ defmodule Test do
   def hello do
     :world
   end
+
+  def lol do
+    :lal
+  end
 end
