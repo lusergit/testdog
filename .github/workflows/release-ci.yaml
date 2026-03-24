@@ -43,7 +43,9 @@ jobs:
           manifest-file: .github/release-please/manifest.json
   publish-docs:
     needs: [make-release]
-    uses: ./.github/workflows/docs-ci.yaml
-    run: |
-      echo ${{ needs.make-release.outputs.backend--release_created }}
-      echo ${{ needs.make-release.outputs.backend--version }}
+    steps:
+      - name: release output
+        shell: bash
+        run: |
+          echo ${{ needs.make-release.outputs.backend--release_created }}
+          echo ${{ needs.make-release.outputs.backend--version }}
