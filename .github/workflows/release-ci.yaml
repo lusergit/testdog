@@ -21,17 +21,11 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-  issues: write
-  pull-requests: write
-
 name: Release CI
 
 jobs:
   make-release:
     runs-on: ubuntu-latest
-    secrets: inherit
     outputs:
       backend--release_created: ${{ steps.release.outputs.backend--release_created }}
       backend--version: ${{ steps.release.outputs.backend--version }}
@@ -50,7 +44,6 @@ jobs:
   publish-docs:
     needs: [make-release]
     uses: ./.github/workflows/docs-ci.yaml
-    secrets: inherit
     run: |
       echo ${{ needs.make-release.outputs.backend--release_created }}
       echo ${{ needs.make-release.outputs.backend--version }}
